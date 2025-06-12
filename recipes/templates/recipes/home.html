@@ -1,0 +1,11 @@
+{% extends 'recipes/base.html' %}
+
+{% block title %}Home | RecipeShare{% endblock %}
+
+{% block content %}
+<div class="text-center py-5">
+  <h1 class="display-4 fw-bold">Welcome to RecipeShare 🍲</h1>
+  <p class="lead mt-3">Explore and share amazing recipes with the world!</p>
+  <a href="{% url 'recipe-list' %}" class="btn btn-primary mt-4 btn-lg">Browse Recipes</a>
+</div>
+{% endblock %}

@@ -1,7 +1,8 @@
 Django>=4.0,<5.0
 djangorestframework>=3.13.0
-gunicorn
-psycopg2-binary
-whitenoise
-django-cors-headers
 django-filter
+gunicorn
+whitenoise
+psycopg2-binary
+django-cors-headers
+Pillow

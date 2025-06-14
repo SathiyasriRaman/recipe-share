@@ -21,3 +21,8 @@ class CommentForm(forms.ModelForm):
         widgets = {
             'text': forms.Textarea(attrs={'class': 'form-control', 'rows': 3}),
         }
+
+class PasswordChangeForm(forms.Form):
+    old_password = forms.CharField(widget=forms.PasswordInput, label="Old Password")
+    new_password = forms.CharField(widget=forms.PasswordInput, label="New Password")
+    confirm_password = forms.CharField(widget=forms.PasswordInput, label="Confirm Password")

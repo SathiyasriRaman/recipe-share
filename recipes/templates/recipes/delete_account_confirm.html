@@ -1,0 +1,9 @@
+{% extends 'recipes/base.html' %}
+{% block content %}
+<h2>Confirm Delete Account</h2>
+<p>This action cannot be undone. Are you sure?</p>
+<form method="post">{% csrf_token %}
+    <button type="submit">Yes, Delete</button>
+    <a href="{% url 'profile' %}">Cancel</a>
+</form>
+{% endblock %}

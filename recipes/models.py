@@ -9,6 +9,7 @@ class Recipe(models.Model):
     image = models.ImageField(upload_to='recipe_images/', blank=True, null=True)
     likes = models.ManyToManyField(User, related_name='liked_recipes', blank=True)
     user = models.ForeignKey(User, on_delete=models.CASCADE, related_name='recipes', null=True, blank=True)
+    author = models.ForeignKey(User, on_delete=models.CASCADE)
     created_at = models.DateTimeField(auto_now_add=True)
 
     def total_likes(self):

@@ -22,4 +22,11 @@
       {% endfor %}
     </div>
   </div>
+{% if recipe.image %}
+    <img src="{{ recipe.image.url }}" alt="Recipe Image" style="max-width: 300px;">
+{% else %}
+    <p>No image available</p>
+{% endif %}
+<img src="{{ recipe.image.url }}">
+
 {% endblock %}

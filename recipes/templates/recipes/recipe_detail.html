@@ -24,7 +24,7 @@
 
           <p class="text-muted small">Created: {{ recipe.created_at }}</p>
 
-          {% if user.is_authenticated %}
+          {% if user == recipe.author or user.is_superuser %}
             <a href="{% url 'recipe-edit' recipe.pk %}" class="btn btn-outline-primary me-2">Edit</a>
 
             <form action="{% url 'recipe-delete' recipe.pk %}" method="POST" class="d-inline">
@@ -61,6 +61,13 @@
               <strong>{{ comment.user.username }}</strong>
               <p class="mb-1">{{ comment.text }}</p>
               <small class="text-muted">{{ comment.created_at }}</small>
+
+              {% if user == comment.user or user.is_superuser %}
+                <form method="POST" action="{% url 'delete-comment' comment.pk %}" class="mt-1">
+                  {% csrf_token %}
+                  <button type="submit" class="btn btn-sm btn-outline-danger">Delete</button>
+                </form>
+              {% endif %}
             </div>
           {% empty %}
             <p class="text-muted">No comments yet.</p>

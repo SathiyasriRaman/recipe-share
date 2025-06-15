@@ -122,7 +122,7 @@ def recipe_create(request):
             return redirect('recipe-detail', pk=recipe.pk)
     else:
         form = RecipeForm()
-    return render(request, 'recipes/recipe_form.html', {'form': form, 'title': 'Add Recipe'})
+    return render(request, 'recipes/add_recipe.html', {'form': form, 'title': 'Add Recipe'})
 
 
 @login_required

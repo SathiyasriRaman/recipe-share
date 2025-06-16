@@ -7,3 +7,6 @@ psycopg2-binary
 django-cors-headers
 Pillow
 python-decouple
+cloudinary
+django-cloudinary-storage
+

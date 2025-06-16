@@ -7,6 +7,9 @@
       {% for recipe in recipes %}
         <div class="col">
           <div class="card h-100 shadow-sm">
+            {% if recipe.image %}
+              <img src="{{ recipe.image.url }}" class="card-img-top" alt="{{ recipe.title }}" style="max-height: 200px; object-fit: cover;">
+            {% endif %}
             <div class="card-body">
               <h5 class="card-title">{{ recipe.title }}</h5>
               <p class="card-text">{{ recipe.description|truncatechars:100 }}</p>
@@ -22,11 +25,4 @@
       {% endfor %}
     </div>
   </div>
-{% if recipe.image %}
-    <img src="{{ recipe.image.url }}" alt="Recipe Image" style="max-width: 300px;">
-{% else %}
-    <p>No image available</p>
-{% endif %}
-<img src="{{ recipe.image.url }}">
-
 {% endblock %}
